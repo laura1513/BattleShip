@@ -12,12 +12,12 @@ public class VentanaMapa extends JFrame{
     public VentanaMapa() {
         super("BATTLESHIP");
         setContentPane(panel);
-        setSize(800,800);
+        setSize(800,750);
         for (int i =0; i<(COLS*ROWS); i++) {
             JLabel label = new JLabel("");
             label.setBorder(new LineBorder(Color.black));
             label.setHorizontalAlignment(SwingConstants.CENTER);
-            panel.add(label);
+            panelBarcos.add(label);
         }
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
