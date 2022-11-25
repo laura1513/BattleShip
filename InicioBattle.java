@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class InicioBattle extends JFrame{
 
@@ -18,6 +20,16 @@ public class InicioBattle extends JFrame{
         empezarJuego.addActionListener(i ->  {
             IniciarSesion inSes = new IniciarSesion();
             setVisible(false);
+
+            inSes.addWindowListener(new WindowAdapter() {
+                @Override
+                public void windowClosed(WindowEvent e) {
+                    setVisible(true);
+                }
+            });
+        });
+        salirJuego.addActionListener(i -> {
+            System.exit(0);
         });
     }
 

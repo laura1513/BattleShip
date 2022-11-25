@@ -11,21 +11,11 @@ public class VentanaMapa extends JFrame{
     public VentanaMapa() {
         super("BATTLESHIP");
         setContentPane(panel);
-        setSize(1000,716);
+        setSize(900,900);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-        setVisible(true);
-    }
-
-    private void createUIComponents() {
-        this.panelBarcos = new JPanel(new BorderLayout());
-        this.comboBox1= new JComboBox<String>();
-        comboBox1.addItem("Aircraft");
-        comboBox1.addItem("BattleShip");
-        comboBox1.addItem("Submarine");
-        comboBox1.addItem("Crusier");
-        comboBox1.addItem("Destroyer");
         this.map = new Mapa(this.comboBox1);
         this.panelBarcos.add(this.map);
+        setLocationRelativeTo(null);
+        setVisible(true);
     }
 }
