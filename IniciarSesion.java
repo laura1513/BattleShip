@@ -10,9 +10,11 @@ public class IniciarSesion extends JFrame{
     private JButton siguiente;
     private JTextField tfNombre;
     private JTextField tfUser;
+    private JLabel error;
 
     public IniciarSesion() {
         super("INICIAR SESIÓN");
+        error.setVisible(false);
         setContentPane(iniciarSesion);
         setSize(600,500);
         siguiente.addActionListener(a -> {
@@ -23,16 +25,9 @@ public class IniciarSesion extends JFrame{
         setVisible(true);
     }
     public void validarDatos(JTextField n, JTextField u) {
-        boolean bien = true;
-        if (n.getText().isEmpty()) {
-            System.out.println("Cadena nombre vacía");
-            bien = false;
-        }
-        if (u.getText().isEmpty()) {
-            System.out.println("Cadena user vacía");
-            bien = false;
-        }
-        if (bien) {
+        if (n.getText().isEmpty() || u.getText().isEmpty()) {
+            error.setVisible(true);
+        } else {
             VentanaMapa vm = new VentanaMapa();
             setVisible(false);
         }
